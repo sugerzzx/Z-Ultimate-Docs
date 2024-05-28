@@ -72,3 +72,8 @@ HLS（HTTP Live Streaming）：HLS 是一种流媒体传输协议，由苹果公
 ## dash.js
 
 [A reference client implementation for the playback of MPEG DASH via JavaScript and compliant browsers](https://github.com/Dash-Industry-Forum/dash.js/)
+
+## video.js
+
+[Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 video and Media Source Extensions, as well as other playback techs like YouTube and Vimeo (through plugins). It supports video playback on desktops and mobile devices. This project was started mid 2010, and the player is now used on over 700,000 websites.
+](https://github.com/videojs/video.js)
