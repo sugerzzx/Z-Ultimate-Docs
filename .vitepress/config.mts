@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress';
 const iconPath = '/assets/z.png';
 
 export default defineConfig({
-  title: "Z-Knowledge",
+  title: "Z-Ultimate-Docs",
   description: "ZZX's knowledge library",
   head: [
     ['link', { rel: 'icon', href: iconPath }],

@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "Z-Knowledge"
+  name: "Z-Ultimate-Docs"
   text: "ZZX's knowledge library"
   tagline: My great project tagline
   actions:
     - theme: brand
       text: Markdown Examples
-      link: /markdown-examples
+      link: /example/markdown-examples
     - theme: alt
       text: API Examples
-      link: /api-examples
+      link: /example/api-examples
 
 features:
   - title: Feature A
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
