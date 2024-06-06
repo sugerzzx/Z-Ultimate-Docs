@@ -7,7 +7,7 @@ hero:
   text: "ZZX's knowledge library"
   tagline: 学无止境
   image:
-    src: /public/logo.png
+    src: /logo.png
     alt: ZZX
   actions:
     - theme: brand
