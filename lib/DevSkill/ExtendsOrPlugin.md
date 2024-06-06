@@ -163,7 +163,7 @@ npm install sass  --save-dev
 
 # Nprogress
 
-**在隔壁的 [VueRouter.md](./VUE/VueRouter.md) 中**
+**在隔壁的 [VueRouter.md](../Framework/VUE/VueRouter.md) 中**
 [Nprogress 官方](https://github.com/rstacruz/nprogress)
 
 ---
@@ -395,8 +395,7 @@ function directoryToObj(dirPath) {
 }
 
 // 使用示例
-const projectDirectory =
-  "D:\\File\\WorkStation\\Web\\Myproject\\SugerzzxAdmin\\Server\\src";
+const projectDirectory = "D:\\File\\WorkStation\\Web\\Myproject\\SugerzzxAdmin\\Server\\src";
 const objectStructure = directoryToObj(projectDirectory);
 console.log(objectStructure);
 ```

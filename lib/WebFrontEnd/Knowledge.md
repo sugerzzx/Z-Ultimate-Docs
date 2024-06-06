@@ -618,7 +618,7 @@ instance.interceptors.response.use(
 
 ## VUE2
 
-### 1. [VUE2 响应式原理](./VUE/VueReactivity.md)
+### 1. [VUE2 响应式原理](../Framework//VUE/VueReactivity.md)
 
 ### 2. v-For 中 key
 

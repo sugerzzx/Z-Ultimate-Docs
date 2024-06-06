@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
-const iconPath = '/assets/z.png';
+const iconPath = '/logo.png';
 
 export default defineConfig({
   title: "Z-Ultimate-Docs",
@@ -16,7 +16,7 @@ export default defineConfig({
     logo: iconPath,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/docs/Lang/Javascript.md' },
+      { text: 'Docs', link: '/lib/Lang/Javascript/AboutJS.md' },
       { text: 'Examples', link: '/example/markdown-examples' }
     ],
 
@@ -30,23 +30,41 @@ export default defineConfig({
           ]
         }
       ],
-      '/docs/': [
+      '/lib/': [
         {
           text: 'AndroidDev',
           items: [
-            { text: 'JAVA', link: '/docs/AndroidDev/JAVA/BasicKnowledge.md' },
-            { text: 'ADB', link: '/docs/AndroidDev/ADB.md' },
-            { text: 'Android', link: '/docs/AndroidDev/Android.md' },
-            { text: 'Animation', link: '/docs/AndroidDev/Animation.md' },
-            { text: 'Layout', link: '/docs/AndroidDev/Layout.md' },
-            { text: 'WebViewInAndroid', link: '/docs/AndroidDev/WebViewInAndroid.md' },
+            { text: 'ADB', link: '/lib/AndroidDev/ADB.md' },
+            { text: 'Android', link: '/lib/AndroidDev/Android.md' },
+            { text: 'Animation', link: '/lib/AndroidDev/Animation.md' },
+            { text: 'Layout', link: '/lib/AndroidDev/Layout.md' },
+            { text: 'WebViewInAndroid', link: '/lib/AndroidDev/WebViewInAndroid.md' },
           ]
         },
         {
           text: 'Language&Script',
           items: [
-            { text: 'Batch', link: '/docs/Lang/Batch/basic.md' },
-            { text: 'Javascript', link: '/docs/Lang/Javascript.md' },
+            { text: 'Batch', link: '/lib/Lang/Batch/basic.md' },
+            {
+              text: 'Java',
+              items: [
+                { text: 'JavaBasic', link: '/lib/Lang/Java/BasicKnowledge.md' },
+              ]
+            },
+            {
+              text: 'Javascript',
+              items: [
+                { text: 'AboutJS', link: '/lib/Lang/Javascript/AboutJS.md' },
+                { text: 'Class', link: '/lib/Lang/Javascript/Class.md' },
+                { text: 'EventLoop', link: '/lib/Lang/Javascript/EventLoop.md' },
+              ]
+            },
+          ]
+        },
+        {
+          text: 'WebFrontEnd',
+          items: [
+            { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' },
           ]
         }
       ]

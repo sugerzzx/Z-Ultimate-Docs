@@ -307,4 +307,4 @@ class SomeController {
 
 ### 信息的加密存储
 
-[Bcrypt](./Scrypt.md)
+[Bcrypt](./Bcrypt.md)

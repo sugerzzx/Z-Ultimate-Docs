@@ -1,6 +1,6 @@
-<!-- 常用CSS样式收集 -->
+<!-- # 媒体查询适应字体
 
-# 媒体查询适应字体
+[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_media_queries)
 
 ```css
 /* 超小型设备（电话，600px 及以下） */
@@ -393,9 +393,7 @@ CSS3 中的伪元素：
 
 # css 变量
 
-## 1. 什么是 CSS 变量
-
-CSS 变量是指在 CSS 中使用 `--` 语法来定义的变量，它可以在全局范围内使用。
+[MDN：`var()` CSS 函数可以插入一个自定义属性（有时也被称为“CSS 变量”）的值，用来代替非自定义属性中值的任何部分。](https://developer.mozilla.org/zh-CN/docs/Web/CSS/var)
 
 CSS 变量的语法如下：
 
@@ -403,12 +401,12 @@ CSS 变量的语法如下：
 --variable-name: variable-value;
 ```
 
-CSS 变量的使用场景：
+也可以通过 js 来动态修改 css 变量的值：
 
-- 在全局范围内使用
+```js
+document.documentElement.style.setProperty("--variable-name", "variable-value");
+```
 
-## 2. CSS 变量的使用技巧
+# css 渐变
 
-### 2.1. CSS 变量的使用技巧一：定义变量
-
-CSS 变量可以用来定义变量，它的原理是在根元素上设置 `--variable-name` 变量，然后在子元素上使用 `var(--variable-name)` 来引用变量。
+[MDN：`linear-gradient()` CSS 函数创建一个由两种或多种颜色沿一条直线进行线性过渡的图像，其结果是 <gradient> 数据类型的对象，此对象是一种特殊的 `<image>` 数据类型。](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient) -->

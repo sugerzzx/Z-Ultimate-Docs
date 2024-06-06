@@ -1,5 +1,7 @@
 # JAVA 基础知识
 
+👉 [来自 oracle 官方的 Java 教程](https://docs.oracle.com/javase/tutorial/)
+
 ## Hello World
 
 ```java
