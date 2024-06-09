@@ -64,7 +64,7 @@ class CustomElement extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.innerHTML = `
       <style>
-        ${this.css}
+        ${cssText}
       </style>
       <div>Hello, World!</div>
     `;
