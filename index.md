@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Z-Ultimate-Docs"
   text: "ZZX's knowledge library"
-  tagline: 学无止境
+  tagline: always collect
   image:
     src: /logo.png
     alt: ZZX
