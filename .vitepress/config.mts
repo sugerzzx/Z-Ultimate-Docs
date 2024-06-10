@@ -64,13 +64,31 @@ export default defineConfig({
         {
           text: 'WebFrontEnd',
           items: [
-            { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' },
+            {
+              text: 'Framework', items: [
+                {
+                  text: 'React', items: [
+                    { text: 'ReactNative', link: '/lib/WebFrontEnd/Framework/React/ReactNative.md' },
+                  ]
+                }
+              ]
+            },
+            { text: 'Stencil', link: '/lib/WebFrontEnd/StencilJS.md' },
+            { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' }
           ]
         },
         {
           text: 'Server',
           items: [
-            { text: 'Nginx', link: '/lib/Server/Nginx.md' },
+            {
+              text: 'Node', items: [
+                { text: 'Bcrypt', link: '/lib/Server/node/Bcrypt.md' },
+                { text: 'KoaJS', link: '/lib/Server/node/KoaJS.md' },
+                { text: 'Sequelize', link: '/lib/Server/node/Sequelize.md' }
+              ]
+            },
+            { text: 'Lighttpd', link: '/lib/Server/Lighttpd.md' },
+            { text: 'Nginx', link: '/lib/Server/Nginx.md' }
           ]
         }
       ]

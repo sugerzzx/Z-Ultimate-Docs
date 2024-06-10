@@ -1,6 +1,8 @@
 # Nginx
 
-Nginx 是一个高性能的 HTTP 和反向代理服务器，也是一个 IMAP/POP3/SMTP 服务器。有了 Nginx，你便可以在一台服务器上运行多个 Web 应用，而每个 Web 应用都监听于不同的端口，Nginx 服务器则负责根据用户的访问域名，将请求反向代理到相应的 Web 应用上。
+👉 [nginx documentation](https://nginx.org/en/docs/)
+
+nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 
 ## Download(Ubuntu)
 
