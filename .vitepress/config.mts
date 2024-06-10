@@ -66,6 +66,12 @@ export default defineConfig({
           items: [
             { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' },
           ]
+        },
+        {
+          text: 'Server',
+          items: [
+            { text: 'Nginx', link: '/lib/Server/Nginx.md' },
+          ]
         }
       ]
     },
