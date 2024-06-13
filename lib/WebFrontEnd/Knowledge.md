@@ -1,5 +1,3 @@
-<!-- 施工中 -->
-
 # 综合板块
 
 ## 1. 介绍一下你对浏览器内核的理解？
@@ -618,7 +616,7 @@ instance.interceptors.response.use(
 
 ## VUE2
 
-### 1. [VUE2 响应式原理](../Framework//VUE/VueReactivity.md)
+### 1. [VUE2 响应式原理](../WebFrontEnd//Framework//VUE/VueReactivity.md)
 
 ### 2. v-For 中 key
 

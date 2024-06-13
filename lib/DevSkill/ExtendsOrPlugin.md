@@ -163,7 +163,7 @@ npm install sass  --save-dev
 
 # Nprogress
 
-**在隔壁的 [VueRouter.md](../Framework/VUE/VueRouter.md) 中**
+**在隔壁的 [VueRouter.md](../WebFrontEnd/Framework/VUE/VueRouter.md) 中**
 [Nprogress 官方](https://github.com/rstacruz/nprogress)
 
 ---

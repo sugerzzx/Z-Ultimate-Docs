@@ -1,5 +1,7 @@
 # Batch
 
+👉 [Guide to Windows Batch Scripting](https://steve-jansen.github.io/guides/windows-batch-scripting/)
+
 ## 介绍
 
 批处理（batch）是一种简化的脚本语言，应用于 DOS 和 Windows 系统中，它是由 DOS 或者 Windows 系统内嵌的命令解释器（通常是 COMMAND.COM 或者 CMD.EXE）解释运行。批处理文件具有.bat 或者.cmd 的扩展名，其最简单的例子，是逐行书写在命令行中会用到的各种命令。

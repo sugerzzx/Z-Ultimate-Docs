@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Z-Ultimate-Docs"
   text: "ZZX's knowledge library"
-  tagline: always collect
+  tagline: Always collect
   image:
     src: /logo.png
     alt: ZZX
@@ -24,15 +24,15 @@ features:
   - icon: 🚧
     title: 施工中
     details: wait for it
-  # - icon: 📚
-  #   title: 复习
-  #   details: 温故而知新，可以为师矣
-  # - icon: 🤔
-  #   title: 思考
-  #   details: 学而不思则罔
-  # - icon: 🏃
-  #   title: 实践
-  #   details: 所谓知行合一，实践才能出真知
+
+  - icon: 👉
+    title: Links
+    details: Contains many links to official docs
+
+  - icon:
+      src: /logo/gpt.svg
+    title: AI Supported
+    details: AI translated or generated, modified by human
 ---
 
 <style>
