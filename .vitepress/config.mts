@@ -12,6 +12,7 @@ export default defineConfig({
     ['meta', { name: 'keywords', content: 'VitePress, Vue, JavaScript' }]
   ],
   ignoreDeadLinks: true,
+  base: '/Z-Ultimate-Docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: iconPath,
