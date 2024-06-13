@@ -1,13 +1,12 @@
 import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
-const iconPath = '/logo.png';
 
 export default defineConfig({
   title: "Z-Ultimate-Docs",
   description: "ZZX's knowledge library",
   head: [
-    ['link', { rel: 'icon', href: iconPath }],
+    ['link', { rel: 'icon', href: '/Z-Ultimate-Docs/logo.png' }],
     ['meta', { name: 'author', content: 'ZZX' }],
     ['meta', { name: 'keywords', content: 'VitePress, Vue, JavaScript' }]
   ],
@@ -15,7 +14,7 @@ export default defineConfig({
   base: '/Z-Ultimate-Docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: iconPath,
+    logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/lib/index.md' },
