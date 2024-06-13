@@ -11,12 +11,13 @@ export default defineConfig({
     ['meta', { name: 'author', content: 'ZZX' }],
     ['meta', { name: 'keywords', content: 'VitePress, Vue, JavaScript' }]
   ],
+  ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: iconPath,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/lib/Lang/Javascript/AboutJS.md' },
+      { text: 'Docs', link: '/lib/index.md' },
       { text: 'Examples', link: '/example/markdown-examples' }
     ],
 
@@ -30,7 +31,7 @@ export default defineConfig({
           ]
         }
       ],
-      '/lib/': [
+      '/lib/AndroidDev': [
         {
           text: 'AndroidDev',
           items: [
@@ -40,7 +41,9 @@ export default defineConfig({
             { text: 'Layout', link: '/lib/AndroidDev/Layout.md' },
             { text: 'WebViewInAndroid', link: '/lib/AndroidDev/WebViewInAndroid.md' },
           ]
-        },
+        }
+      ],
+      '/lib/Lang/': [
         {
           text: 'Language&Script',
           items: [
@@ -48,19 +51,22 @@ export default defineConfig({
             {
               text: 'Java',
               items: [
-                { text: 'JavaBasic', link: '/lib/Lang/Java/BasicKnowledge.md' },
+                { text: 'JavaBasic', link: '/lib/Lang/Java/Basics/BasicKnowledge.md' },
+                { text: 'Learning the Java Language', link: '/lib/Lang/Java/Basics/Learning the Java Language.md' }
               ]
             },
             {
               text: 'Javascript',
               items: [
                 { text: 'AboutJS', link: '/lib/Lang/Javascript/AboutJS.md' },
-                { text: 'Class', link: '/lib/Lang/Javascript/Class.md' },
                 { text: 'EventLoop', link: '/lib/Lang/Javascript/EventLoop.md' },
+                { text: 'Object&Class', link: '/lib/Lang/Javascript/Object&Class.md' },
               ]
-            },
+            }
           ]
-        },
+        }
+      ],
+      '/lib/WebFrontEnd/': [
         {
           text: 'WebFrontEnd',
           items: [
@@ -76,7 +82,9 @@ export default defineConfig({
             { text: 'Stencil', link: '/lib/WebFrontEnd/StencilJS.md' },
             { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' }
           ]
-        },
+        }
+      ],
+      '/lib/Server/': [
         {
           text: 'Server',
           items: [
