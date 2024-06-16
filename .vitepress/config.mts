@@ -79,6 +79,7 @@ export default defineConfig({
                 }
               ]
             },
+            { text: 'SSR', link: '/lib/WebFrontEnd/SSR.md' },
             { text: 'Stencil', link: '/lib/WebFrontEnd/StencilJS.md' },
             { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' }
           ]
