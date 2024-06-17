@@ -1,5 +1,13 @@
 # SSR
 
+👉 [next](https://nextjs.org/)
+
+👉 [nuxt](https://nuxt.com/)
+
+👉 [vite-ssr](https://vitejs.dev/guide/ssr.html)
+
+👉 [vike](https://vike.dev/)
+
 ## SSR
 
 在 Web 开发中，**SSR** 是**服务器端渲染（Server-Side Rendering）**的简称。SSR 是 Web 应用程序中一种渲染页面内容的技术，与之相对的是**客户端渲染（Client-Side Rendering, CSR）**。下面是 SSR 的详细介绍，包括它的工作原理、优缺点以及与 CSR 的对比。
@@ -59,6 +67,12 @@ SSR 是一种有效的提高 Web 应用初始加载性能和 SEO 优化的技术
 如果你有任何其他问题或想了解更多，请告诉我！
 
 ## SSR 和 SSG
+
+[The only difference between SSG and SSR is when the HTML is rendered:](https://vike.dev/pre-rendering#ssg-vs-ssr)
+
+- SSG: the HTML of pages is rendered at build-time (when calling $ vite build)
+
+- SSR: the HTML of pages is rendered at request-time (when the user goes to that page)
 
 **服务器端渲染（SSR）** 和 **静态站点生成（SSG）** 是 Web 开发中两种不同的页面渲染方法，它们在生成页面的时间点和使用场景上存在显著差异。下面是 SSR 和 SSG 的详细对比及其应用场景。
 
