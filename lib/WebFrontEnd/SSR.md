@@ -8,6 +8,12 @@
 
 👉 [vike](https://vike.dev/)
 
+👉 [ Dan Abramov's explanation of SSR, HTML Streaming, and Progressive Rendering](https://github.com/reactwg/react-18/discussions/37)
+
+👉 [Hydration (web development)](<https://en.wikipedia.org/wiki/Hydration_(web_development)>)
+
+👉 [Hydration: What is it?](https://dev.to/costamatheus97/hydration-what-is-it-1lgl)
+
 ## SSR
 
 在 Web 开发中，**SSR** 是**服务器端渲染（Server-Side Rendering）**的简称。SSR 是 Web 应用程序中一种渲染页面内容的技术，与之相对的是**客户端渲染（Client-Side Rendering, CSR）**。下面是 SSR 的详细介绍，包括它的工作原理、优缺点以及与 CSR 的对比。
