@@ -27,7 +27,7 @@ features:
 
   - icon: 👉
     title: Links
-    details: Contains many links to official docs
+    details: Links guide you to the true knowledge
 
   - icon:
       src: /logo/gpt.svg
