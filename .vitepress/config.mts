@@ -15,6 +15,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.png',
+    outline: [2, 3],
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/lib/index.md' },
