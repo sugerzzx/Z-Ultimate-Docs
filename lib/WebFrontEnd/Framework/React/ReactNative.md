@@ -164,6 +164,24 @@ const App: FC<Props> = () => {
 export default App;
 ```
 
+### react-native-vector-icons
+
+[Elevate your React Native applications with the power of customizable vector icons.](https://github.com/oblador/react-native-vector-icons)
+
+#### 安装
+
+```shell
+yarn add react-native-vector-icons @types/react-native-vector-icons -S
+```
+
+#### 配置
+
+[Android Setup](https://github.com/oblador/react-native-vector-icons?tab=readme-ov-file#android-setup)
+
+#### 图标库
+
+[react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
+
 ## 自定义原生组件
 
 你可以使用平台原生语言编写原生组件，然后通过 Bridge 机制将原生组件暴露给 JavaScript 代码。
