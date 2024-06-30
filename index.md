@@ -5,34 +5,30 @@ layout: home
 hero:
   name: "Z-Ultimate-Docs"
   text: "ZZX's knowledge library"
-  tagline: Always collect
+  tagline: <pre class="pre"><span class="tag">&lt;/c0de&gt;</span></pre>
   image:
     src: /logo.png
     alt: ZZX
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /example/markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /example/api-examples
+      text: Docs
+      link: /lib/
     - theme: alt
       text: GitHub
       link: https://github.com/sugerzzx
 
 features:
-  - icon: 🚧
-    title: 施工中
-    details: wait for it
+  - icon: 📝
+    title: Record
+    details: Actrually, it's a record of my learning.🧐
 
   - icon: 👉
     title: Links
-    details: Links guide you to the true knowledge
+    details: Standing on the shoulders of Giants, though I haven't seen further yet.🤣
 
-  - icon:
-      src: /logo/gpt.svg
-    title: AI Supported
-    details: AI translated or generated, modified by human
+  - icon: 🚧
+    title: Building
+    details: Rome wasn't built in a day, and this site won't built in a yaer.😋
 ---
 
 <style>
@@ -43,4 +39,34 @@ features:
 --vp-home-hero-image-background-image: linear-gradient(-60deg, #2C73D2 10%, #845EC2);
 --vp-home-hero-image-filter: blur(60px);
 }
+
+.pre {
+  margin: 0;
+}
+
+.tag {
+  padding: 1em 0em;
+  font-size: 2em;
+  background: radial-gradient(at var(--x, 10%) var(--y, 50%), #ffffffa4, #000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: default;
+}
 </style>
+
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const container = document.querySelector('.tag');
+  container.addEventListener('mousemove', (e) => {
+    const { left, top, width, height } = container.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+
+    container.style.setProperty('--x', `${x}%`);
+    container.style.setProperty('--y', `${y}%`);
+  });
+})
+</script>
