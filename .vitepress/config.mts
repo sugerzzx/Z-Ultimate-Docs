@@ -25,20 +25,10 @@ export default defineConfig({
     outline: [2, 3],
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/lib/index.md' },
-      { text: 'Examples', link: '/example/markdown-examples' }
+      { text: 'Docs', link: '/lib/index.md' }
     ],
 
     sidebar: {
-      '/example/': [
-        {
-          text: 'Examples',
-          items: [
-            { text: 'Markdown Examples', link: '/example/markdown-examples.md' },
-            { text: 'Runtime API Examples', link: '/example/api-examples' }
-          ]
-        }
-      ],
       '/lib/AndroidDev': [
         {
           text: 'AndroidDev',
