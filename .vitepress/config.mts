@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress';
+import { type DefaultTheme, defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 
@@ -29,76 +29,10 @@ export default defineConfig({
     ],
 
     sidebar: {
-      '/lib/AndroidDev': [
-        {
-          text: 'AndroidDev',
-          items: [
-            { text: 'ADB', link: '/lib/AndroidDev/ADB.md' },
-            { text: 'Android', link: '/lib/AndroidDev/Android.md' },
-            { text: 'Animation', link: '/lib/AndroidDev/Animation.md' },
-            { text: 'Layout', link: '/lib/AndroidDev/Layout.md' },
-            { text: 'WebViewInAndroid', link: '/lib/AndroidDev/WebViewInAndroid.md' },
-          ]
-        }
-      ],
-      '/lib/Lang/': [
-        {
-          text: 'Language&Script',
-          items: [
-            { text: 'Batch', link: '/lib/Lang/Batch/basic.md' },
-            {
-              text: 'Java',
-              items: [
-                { text: 'JavaBasic', link: '/lib/Lang/Java/Basics/BasicKnowledge.md' },
-                { text: 'Learning the Java Language', link: '/lib/Lang/Java/Basics/Learning the Java Language.md' }
-              ]
-            },
-            {
-              text: 'Javascript',
-              items: [
-                { text: 'AboutJS', link: '/lib/Lang/Javascript/AboutJS.md' },
-                { text: 'EventLoop', link: '/lib/Lang/Javascript/EventLoop.md' },
-                { text: 'Object&Class', link: '/lib/Lang/Javascript/Object&Class.md' },
-              ]
-            }
-          ]
-        }
-      ],
-      '/lib/WebFrontEnd/': [
-        {
-          text: 'WebFrontEnd',
-          items: [
-            {
-              text: 'Framework', items: [
-                {
-                  text: 'React', items: [
-                    { text: 'ReactNative', link: '/lib/WebFrontEnd/Framework/React/ReactNative.md' },
-                  ]
-                }
-              ]
-            },
-            { text: 'SSR', link: '/lib/WebFrontEnd/SSR.md' },
-            { text: 'Stencil', link: '/lib/WebFrontEnd/StencilJS.md' },
-            { text: 'WebMediaTech', link: '/lib/WebFrontEnd/WebMediaTech.md' }
-          ]
-        }
-      ],
-      '/lib/Server/': [
-        {
-          text: 'Server',
-          items: [
-            {
-              text: 'Node', items: [
-                { text: 'Bcrypt', link: '/lib/Server/node/Bcrypt.md' },
-                { text: 'KoaJS', link: '/lib/Server/node/KoaJS.md' },
-                { text: 'Sequelize', link: '/lib/Server/node/Sequelize.md' }
-              ]
-            },
-            { text: 'Lighttpd', link: '/lib/Server/Lighttpd.md' },
-            { text: 'Nginx', link: '/lib/Server/Nginx.md' }
-          ]
-        }
-      ]
+      '/lib/AndroidDev/': { base: '/lib/AndroidDev/', items: siderbarAndroidDev() },
+      '/lib/Lang/': { base: '/lib/Lang/', items: sidebarLang() },
+      '/lib/WebFrontEnd/': { base: '/lib/WebFrontEnd/', items: sidebarWebFrontEnd() },
+      '/lib/Server/': { base: '/lib/Server/', items: sidebarServer() },
     },
 
     socialLinks: [
@@ -106,3 +40,85 @@ export default defineConfig({
     ]
   }
 });
+
+function siderbarAndroidDev(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'AndroidDev',
+      items: [
+        { text: 'ADB', link: 'ADB.md' },
+        { text: 'Android', link: 'Android.md' },
+        { text: 'Animation', link: 'Animation.md' },
+        { text: 'Layout', link: 'Layout.md' },
+        { text: 'WebViewInAndroid', link: 'WebViewInAndroid.md' },
+      ]
+    }
+  ];
+}
+
+function sidebarLang(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Language&Script',
+      items: [
+        { text: 'Batch', link: 'Batch/basic.md' },
+        {
+          text: 'Java',
+          base: '/lib/Lang/Java/',
+          items: [
+            { text: 'JavaBasic', link: 'Basics/BasicKnowledge.md' },
+            { text: 'Learning the Java Language', link: 'Basics/Learning the Java Language.md' }
+          ]
+        },
+        {
+          text: 'Javascript',
+          base: '/lib/Lang/Javascript/',
+          items: [
+            { text: 'AboutJS', link: 'AboutJS.md' },
+            { text: 'EventLoop', link: 'EventLoop.md' },
+            { text: 'Object&Class', link: 'Object&Class.md' },
+          ]
+        }
+      ]
+    }
+  ];
+}
+
+function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'WebFrontEnd',
+      items: [
+        {
+          text: 'Framework',
+          base: '/lib/WebFrontEnd/Framework/',
+          items: [
+            { text: 'ReactNative', link: 'ReactNative.md' },
+          ]
+        },
+        { text: 'SSR', link: 'SSR.md' },
+        { text: 'Stencil', link: 'StencilJS.md' },
+        { text: 'WebMediaTech', link: 'WebMediaTech.md' }
+      ]
+    }
+  ];
+}
+
+function sidebarServer(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Server',
+      items: [
+        {
+          text: 'Node', items: [
+            { text: 'Bcrypt', link: 'node/Bcrypt.md' },
+            { text: 'KoaJS', link: 'node/KoaJS.md' },
+            { text: 'Sequelize', link: 'node/Sequelize.md' }
+          ]
+        },
+        { text: 'Lighttpd', link: 'Lighttpd.md' },
+        { text: 'Nginx', link: 'Nginx.md' }
+      ]
+    }
+  ];
+}
