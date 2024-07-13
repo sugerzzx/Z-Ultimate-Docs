@@ -98,7 +98,7 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
         },
         {
           text: 'Framework',
-          base: '/lib/WebFrontEnd/Framework/',
+          base: '/lib/WebFrontEnd/Framework/React/',
           items: [
             { text: 'ReactNative', link: 'ReactNative.md' },
           ]
