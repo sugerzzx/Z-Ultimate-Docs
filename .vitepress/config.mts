@@ -90,6 +90,13 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
       text: 'WebFrontEnd',
       items: [
         {
+          text: 'CSS',
+          base: '/lib/WebFrontEnd/CSS/',
+          items: [
+            { text: 'TailwindCSS', link: 'TailwindCSS.md' }
+          ]
+        },
+        {
           text: 'Framework',
           base: '/lib/WebFrontEnd/Framework/',
           items: [

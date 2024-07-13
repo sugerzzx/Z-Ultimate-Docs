@@ -1,6 +1,6 @@
 # Tailwindcss
 
-## 你可能不知道的 TaiwindCss 类名
+## 实用 TaiwindCss 类名
 
 ### 1. inset-x-0
 
@@ -84,11 +84,31 @@ h-fit 的全称是 height: fit-content,它的主要特性包括:
 
 ### cn 函数
 
-1. 接收任意数量的 class 参数,使用 clsx 把它们组合成一个字符串。clsx 来自 clsx 库,可以把数组、对象、字符串类型的 class 合并成一个字符串。
-2. 然后使用 twMerge 函数进行处理。twMerge 来自 tailwind-merge 库,它可以合并像 Tailwind CSS 这样的使用动态前缀的类名。
-3. 最后返回处理后的类名字符串，如此，不需要手写样式字符串拼接,也能处理动态样式前缀。
+- 问题 1：
 
-```js
+  通常，在使用 Tailwind CSS 时，当我们通过 props 传递类名合并样式时，我们需要在组件中拼接类名。这样会导致代码冗余，可读性差。为了解决这个问题，我们可以使用一个工具函数来帮助我们拼接类名。
+
+  ```tsx
+  function mergeClassNames(...classNames: string[]) {
+    return classNames.filter(Boolean).join(" ");
+  }
+  ```
+
+  但是，这个函数只能拼接字符串，无法处理数组。为了解决这个问题，我们可以使用 clsx 库。
+
+  [clsx](https://github.com/lukeed/clsx#readme) 是一个用于合并类名的工具库，它可以处理字符串、数组、对象等多种类型的类名。使用 clsx 后，我们可以更方便地拼接类名。
+
+- 问题 2:
+
+  在 Tailwind CSS 中，合并的类名可能不会像预期那样渲染，虽然传入的类名可能看起来在已有样式之后，会覆盖已有样式，甚至可能在页面中已经生效，但是当我们重启开发服务器，类名会按照字母顺序被重新排序，传入的样式顺序在已有样式之前，导致其反而被覆盖。为了解决这个问题，我们可以使用 tailwind-merge 库。
+
+  [tailwind-merge](https://github.com/dcastil/tailwind-merge)
+
+  [为什么使用 tailwind-merge](https://www.youtube.com/watch?v=tfgLd5ZSNPc)
+
+结合 clsx 和 tailwind-merge，我们可以实现一个更加方便的合并类名的工具函数。
+
+```ts
 import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -97,6 +117,18 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-## react 中 tailwind 无法根据 state 生成动态样式
+```tsx
+import { cn } from "./utils";
 
-在 React 中,使用 Tailwind CSS 时,想根据 state 生成动态样式是不可行的。使用比如`className={p-[${state}]}` 这样的写法是无效的。因为 Tailwind CSS 是基于构建时的静态分析,无法在运行时动态生成样式。这时只能使用*css 变量*或者*行内样式*来动态修改样式。
+export default function Button({ children, className }) {
+  return <button className={cn("bg-blue-500", "text-white", className)}>{children}</button>;
+}
+```
+
+[cn() - Every Tailwind Coder Needs It (clsx + twMerge)](https://www.youtube.com/watch?v=re2JFITR7TI)
+
+## Warning
+
+### 不要根据 state 生成具有动态值的 Tailwind CSS 类名
+
+在 React 中,使用 Tailwind CSS 时,想根据 state 生成具有动态值的样式名是不可行的。使用比如`className={p-[${state}]}` 这样的写法是无效的。因为 Tailwind CSS 是基于构建时的静态分析,无法在运行时动态生成样式。这时只能使用*css 变量*或者*行内样式*来动态修改样式。能做到的是根据 state 来切换类名,而不是动态生成类名。
