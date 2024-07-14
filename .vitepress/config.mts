@@ -91,7 +91,7 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: 'CSS',
-          base: '/lib/WebFrontEnd/CSS/',
+          base: '/lib/WebFrontEnd/CSSKnowledge/',
           items: [
             { text: 'TailwindCSS', link: 'TailwindCSS.md' }
           ]
