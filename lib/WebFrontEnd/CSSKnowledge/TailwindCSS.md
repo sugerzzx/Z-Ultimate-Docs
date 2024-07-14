@@ -1,5 +1,9 @@
 # Tailwindcss
 
+👉 [A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.](https://tailwindcss.com/)
+
+👉 [tailwindcssCn](https://www.tailwindcss.cn/)
+
 ## 实用 TaiwindCss 类名
 
 ### 1. inset-x-0
@@ -104,7 +108,7 @@ h-fit 的全称是 height: fit-content,它的主要特性包括:
 
   [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 
-  [为什么使用 tailwind-merge](https://www.youtube.com/watch?v=tfgLd5ZSNPc)
+  ▶ [为什么使用 tailwind-merge](https://www.youtube.com/watch?v=tfgLd5ZSNPc)
 
 结合 clsx 和 tailwind-merge，我们可以实现一个更加方便的合并类名的工具函数。
 
@@ -125,10 +129,16 @@ export default function Button({ children, className }) {
 }
 ```
 
-[cn() - Every Tailwind Coder Needs It (clsx + twMerge)](https://www.youtube.com/watch?v=re2JFITR7TI)
+▶ [cn() - Every Tailwind Coder Needs It (clsx + twMerge)](https://www.youtube.com/watch?v=re2JFITR7TI)
 
-## Warning
+## Mistakes
 
 ### 不要根据 state 生成具有动态值的 Tailwind CSS 类名
 
-在 React 中,使用 Tailwind CSS 时,想根据 state 生成具有动态值的样式名是不可行的。使用比如`className={p-[${state}]}` 这样的写法是无效的。因为 Tailwind CSS 是基于构建时的静态分析,无法在运行时动态生成样式。这时只能使用*css 变量*或者*行内样式*来动态修改样式。能做到的是根据 state 来切换类名,而不是动态生成类名。
+▶ [Avoid This Tailwind Mistake (Dynamic Classes)](https://www.youtube.com/watch?v=guh9qzxkb1o)
+
+👉 [Class detection in-depth](https://tailwindcss.com/docs/content-configuration#class-detection-in-depth)
+
+👉 [Dynamic class names](https://www.tailwindcss.cn/docs/content-configuration#dynamic-class-names)
+
+在 React 中,使用 Tailwind CSS 时,想根据 state 生成具有动态值的样式名是不可行的。使用比如`className={p-[${state}]}` 这样的写法是无效的。因为 Tailwind CSS 是基于构建时的静态分析，它会在构建时使用正则表达式来提取每个可能成为类名的字符串，`p-[${state}]` 并不会在样式表中生成对应的类名。
