@@ -293,6 +293,12 @@ React 通过一种叫做“事务”（Transaction）的机制来实现状态更
 
 `useRef` Hook 用于在函数组件中创建一个可变的引用。它返回一个包含 `current` 属性的对象，该属性可以存储任意值，并且在组件的多次渲染之间保持不变。
 
+### useReducer
+
+Reducer 是处理状态的另一种方式。
+
+[迁移状态逻辑至 Reducer 中](https://zh-hans.react.dev/learn/extracting-state-logic-into-a-reducer)
+
 ## TODO
 
 直接嵌套的子组件会随父组件 re-render 而 re-render,但是通过 children 传递的子组件不会随父组件 re-render 而 re-render

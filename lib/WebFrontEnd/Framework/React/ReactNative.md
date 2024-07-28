@@ -13,7 +13,7 @@ React Native 是 Facebook 开发的一个开源的跨平台移动应用框架。
   React Native 的工作原理是在平台原生 UI 组件和 JavaScript 代码之间建立了一个 Bridge。JavaScript 代码可以调用 Bridge 提供的接口来控制原生组件的布局、样式等,原生组件也可以通过 Bridge 向 JavaScript 发送事件通知。
   ![RN工作原理](/RN/RNWorkPrinciple.png)
 
-# RN 组件
+## RN 组件
 
 [components-and-apis](https://reactnative.dev/docs/components-and-apis)
 
@@ -185,3 +185,11 @@ yarn add react-native-vector-icons @types/react-native-vector-icons -S
 ## 自定义原生组件
 
 你可以使用平台原生语言编写原生组件，然后通过 Bridge 机制将原生组件暴露给 JavaScript 代码。
+
+## svg
+
+[How to import SVG files in React Native](https://blog.logrocket.com/use-svgs-react-native-tutorial/)
+
+[text](https://stackoverflow.com/questions/49951885/which-is-the-best-approach-to-insert-an-vector-svg-graph-into-a-react-native-a/49952050#49952050)
+
+[text](https://stackoverflow.com/questions/38830568/how-to-show-svg-file-on-react-native)
