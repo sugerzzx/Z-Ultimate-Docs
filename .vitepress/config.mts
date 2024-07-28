@@ -25,14 +25,14 @@ export default defineConfig({
     outline: [2, 3],
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/lib/index.md' }
+      { text: 'Docs', link: '/md/index.md' }
     ],
 
     sidebar: {
-      '/lib/AndroidDev/': { base: '/lib/AndroidDev/', items: siderbarAndroidDev() },
-      '/lib/Lang/': { base: '/lib/Lang/', items: sidebarLang() },
-      '/lib/WebFrontEnd/': { base: '/lib/WebFrontEnd/', items: sidebarWebFrontEnd() },
-      '/lib/Server/': { base: '/lib/Server/', items: sidebarServer() },
+      '/md/AndroidDev/': { base: '/md/AndroidDev/', items: siderbarAndroidDev() },
+      '/md/Lang/': { base: '/md/Lang/', items: sidebarLang() },
+      '/md/WebFrontEnd/': { base: '/md/WebFrontEnd/', items: sidebarWebFrontEnd() },
+      '/md/Server/': { base: '/md/Server/', items: sidebarServer() },
     },
 
     socialLinks: [
@@ -64,7 +64,7 @@ function sidebarLang(): DefaultTheme.SidebarItem[] {
         { text: 'Batch', link: 'Batch/basic.md' },
         {
           text: 'Java',
-          base: '/lib/Lang/Java/',
+          base: '/md/Lang/Java/',
           items: [
             { text: 'JavaBasic', link: 'Basics/BasicKnowledge.md' },
             { text: 'Learning the Java Language', link: 'Basics/Learning the Java Language.md' }
@@ -72,10 +72,11 @@ function sidebarLang(): DefaultTheme.SidebarItem[] {
         },
         {
           text: 'Javascript',
-          base: '/lib/Lang/Javascript/',
+          base: '/md/Lang/Javascript/',
           items: [
             { text: 'AboutJS', link: 'AboutJS.md' },
             { text: 'EventLoop', link: 'EventLoop.md' },
+            { text: 'FPVSOOP', link: 'FPVSOOP.md' },
             { text: 'Object&Class', link: 'Object&Class.md' },
           ]
         }
@@ -91,14 +92,14 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: 'CSS',
-          base: '/lib/WebFrontEnd/CSSKnowledge/',
+          base: '/md/WebFrontEnd/CSSKnowledge/',
           items: [
             { text: 'TailwindCSS', link: 'TailwindCSS.md' }
           ]
         },
         {
           text: 'Framework',
-          base: '/lib/WebFrontEnd/Framework/React/',
+          base: '/md/WebFrontEnd/Framework/React/',
           items: [
             { text: 'ReactNative', link: 'ReactNative.md' },
           ]

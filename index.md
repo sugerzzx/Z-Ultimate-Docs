@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Docs
-      link: /lib/
+      link: /md/
     - theme: alt
       text: GitHub
       link: https://github.com/sugerzzx
