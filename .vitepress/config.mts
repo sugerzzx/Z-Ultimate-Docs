@@ -106,7 +106,8 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
         },
         { text: 'SSR', link: 'SSR.md' },
         { text: 'Stencil', link: 'StencilJS.md' },
-        { text: 'WebMediaTech', link: 'WebMediaTech.md' }
+        { text: 'WebMediaTech', link: 'WebMediaTech.md' },
+        { text: 'Patterns', link: 'Patterns.md' }
       ]
     }
   ];
