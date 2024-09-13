@@ -31,3 +31,11 @@
 这是由于类型检查默认使用了 `lib` 中的所有库文件，包括 `dom`，而 `dispatcher` 属性并不在 `dom` 所定义的 `RequestInit` 中。
 
 当我们指定 `lib` 选项为 `["esnext"]` 时(确保数组内没有 `"dom"` )，再次查看 `fetch` 的类型，就只有一个定义了，且传入 `dispatcher` 属性时会提供正确的类型检查。
+
+```json
+{
+  "compilerOptions": {
+    "lib": ["esnext"]
+  }
+}
+```
