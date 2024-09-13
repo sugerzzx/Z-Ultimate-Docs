@@ -71,8 +71,8 @@ function sidebarLang(): DefaultTheme.SidebarItem[] {
           ]
         },
         {
-          text: 'Javascript',
-          base: '/md/Lang/Javascript/',
+          text: 'JavaScript',
+          base: '/md/Lang/JavaScript/',
           items: [
             { text: 'AboutJS', link: 'AboutJS.md' },
             { text: 'EventLoop', link: 'EventLoop.md' },
