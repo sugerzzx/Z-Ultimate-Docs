@@ -79,6 +79,14 @@ function sidebarLang(): DefaultTheme.SidebarItem[] {
             { text: 'FPVSOOP', link: 'FPVSOOP.md' },
             { text: 'Object&Class', link: 'Object&Class.md' },
           ]
+        },
+        {
+          text: 'TypeScript',
+          base: '/md/Lang/TypeScript/',
+          items: [
+            { text: 'TypeScript', link: 'TypeScript.md' },
+            { text: 'TSConfig', link: 'TSConfig.md' }
+          ]
         }
       ]
     }
