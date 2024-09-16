@@ -43,7 +43,7 @@ features:
 .tag {
   padding: 1em 0em;
   font-size: 2em;
-  background: radial-gradient(at var(--x, 10%) var(--y, 50%), #ffffffa4, #000);
+  background: radial-gradient(at var(--x,10%) var(--y,10%), var(--vp-c-green-1),  var(--vp-c-bg));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
