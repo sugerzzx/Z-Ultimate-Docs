@@ -7,7 +7,5 @@ import Link from '../../components/Link.vue';
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app, router, siteData }) {
-    app.component('Link', Link);
-  }
+  enhanceApp({ app, router, siteData }) { }
 } satisfies Theme;

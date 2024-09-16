@@ -1,8 +1,8 @@
 # Ptterns
 
-<Link title="Patterns.dev" link="https://www.patterns.dev/" />
+[Patterns.dev](https://www.patterns.dev/)
 
-<Link title="JavaScript Patterns Workshop" link="https://javascriptpatterns.vercel.app/patterns" />
+[JavaScript Patterns Workshop](https://javascriptpatterns.vercel.app/patterns)
 
 ## Observer Pattern
 
