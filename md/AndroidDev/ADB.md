@@ -1,6 +1,10 @@
 # ADB
 
-## adb 命令
+[Android 调试桥 (adb)](https://developer.android.com/tools/adb?hl=zh-cn#stopping)
+
+[adbshell](https://adbshell.com/)
+
+## ADB
 
 adb 全称 Android Debug Bridge，是 Android 平台调试桥，是连接 Android 手机与 PC 端的桥梁，通过 adb 可以管理、操作模拟器和设备，如安装软件、查看设备软硬件参数、系统升级、运行 shell 命令等。
 
@@ -11,19 +15,6 @@ adb 的常用功能包括：
 - 查看设备信息
 - 运行 Shell 命令
 - 调试 Android 应用程序
-
-## adb shell 命令
-
-adb shell 是 adb 的一个子命令，它允许你在 Android 设备上运行 Shell 命令。Shell 命令是 Linux 系统下的命令，可以用来执行各种系统操作，如查看文件、创建文件、安装软件等。
-
-adb shell 的常用功能包括：
-
-- 查看文件
-- 创建文件
-- 安装软件
-- 卸载软件
-- 运行系统服务
-- 执行其他系统操作
 
 ## adb 工具安装
 
@@ -65,6 +56,19 @@ export PATH=$PATH:$HOME/<adb-tool-directory>
 其中，`<adb-tool-directory>`是 Android SDK Command-line Tools 所在目录。
 
 添加环境变量后，就可以使用 adb 工具了。
+
+## adb shell
+
+adb shell 是 adb 的一个子命令，它允许你在 Android 设备上运行 shell 命令。Shell 命令是 Linux 系统下的命令，可以用来执行各种系统操作，如查看文件、创建文件、安装软件等。
+
+adb shell 的常用功能包括：
+
+- 查看文件
+- 创建文件
+- 安装软件
+- 卸载软件
+- 运行系统服务
+- 执行其他系统操作
 
 ## adb 常用命令
 
