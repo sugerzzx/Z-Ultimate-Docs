@@ -112,6 +112,7 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
             { text: 'ReactNative', link: 'ReactNative.md' },
           ]
         },
+        { text: 'Patch', link: 'Patch.md' },
         { text: 'SSE', link: 'SSE.md' },
         { text: 'SSR', link: 'SSR.md' },
         { text: 'Stencil', link: 'StencilJS.md' },
