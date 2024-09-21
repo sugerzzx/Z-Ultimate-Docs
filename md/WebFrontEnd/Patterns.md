@@ -4,6 +4,8 @@
 
 [JavaScript Patterns Workshop](https://javascriptpatterns.vercel.app/patterns)
 
+[Vue Design Patterns](https://dev-academy.com/vue-design-patterns/)
+
 ## Observer Pattern
 
 [Observer Pattern](https://www.patterns.dev/vanilla/observer-pattern)
@@ -11,7 +13,7 @@
 在 react 中，我们可以结合 Observer Pattern 和 Context API 来实现 Event Bus 的功能。
 
 ```tsx
-import { createContext, Dispatch, FC, ReactNode, useCallback, useContext, useMemo, useReducer, useState } from "react";
+import { createContext, FC, ReactNode, useCallback, useContext, useMemo, useRef } from "react";
 
 export type EventListener = (data: any) => void;
 
@@ -32,37 +34,26 @@ interface EventBusContextProviderProps {
 }
 
 export const EventBusContextProvider: FC<EventBusContextProviderProps> = ({ children }) => {
-  const [listeners, setListeners] = useState<{ [key: string]: EventListener[] }>({});
+  const listenersRef = useRef<{ [key: string]: EventListener[] }>({});
 
-  const subscribe = useCallback(
-    (eventName: string, callback: EventListener) => {
-      if (!listeners[eventName]) {
-        listeners[eventName] = [];
-      }
-      listeners[eventName].push(callback);
-      setListeners({ ...listeners });
-    },
-    [listeners]
-  );
+  const subscribe = useCallback((eventName: string, callback: EventListener) => {
+    if (!listenersRef.current[eventName]) {
+      listenersRef.current[eventName] = [];
+    }
+    listenersRef.current[eventName].push(callback);
+  }, []);
 
-  const unsubscribe = useCallback(
-    (eventName: string, callback: EventListener) => {
-      if (listeners[eventName]) {
-        listeners[eventName] = listeners[eventName].filter(cb => cb !== callback);
-        setListeners({ ...listeners });
-      }
-    },
-    [listeners]
-  );
+  const unsubscribe = useCallback((eventName: string, callback: EventListener) => {
+    if (listenersRef.current[eventName]) {
+      listenersRef.current[eventName] = listenersRef.current[eventName].filter(cb => cb !== callback);
+    }
+  }, []);
 
-  const publish = useCallback(
-    (eventName: string, data?: any) => {
-      if (listeners[eventName]) {
-        listeners[eventName].forEach(cb => cb(data));
-      }
-    },
-    [listeners]
-  );
+  const publish = useCallback((eventName: string, data?: any) => {
+    if (listenersRef.current[eventName]) {
+      listenersRef.current[eventName].forEach(cb => cb(data));
+    }
+  }, []);
 
   const contextValue = useMemo(() => ({ subscribe, unsubscribe, publish }), [subscribe, unsubscribe, publish]);
 
@@ -138,65 +129,4 @@ const App: FC = () => {
 };
 
 export default App;
-```
-
-在 vue 中，我们可以 Observar Pattrn 和组合式函数来实现 Event Bus 的功能。
-
-```ts
-import { ref, onUnmounted, onMounted, Ref } from "vue";
-
-type EventListener = (data: any) => void;
-
-type EventBus = {
-  subscribe: (eventName: string, callback: EventListener) => void;
-  unsubscribe: (eventName: string, callback: EventListener) => void;
-  publish: (eventName: string, data?: any) => void;
-};
-
-export const useEventBus = (): EventBus => {
-  const listeners: { [key: string]: EventListener[] } = {};
-
-  const subscribe = (eventName: string, callback: EventListener) => {
-    if (!listeners[eventName]) {
-      listeners[eventName] = [];
-    }
-    listeners[eventName].push(callback);
-  };
-
-  const unsubscribe = (eventName: string, callback: EventListener) => {
-    if (listeners[eventName]) {
-      listeners[eventName] = listeners[eventName].filter(cb => cb !== callback);
-    }
-  };
-
-  const publish = (eventName: string, data?: any) => {
-    if (listeners[eventName]) {
-      listeners[eventName].forEach(cb => cb(data));
-    }
-  };
-
-  return { subscribe, unsubscribe, publish };
-};
-
-export const useEventListener = (eventName: string, callback: EventListener) => {
-  const eventBus = useEventBus();
-
-  onMounted(() => {
-    eventBus.subscribe(eventName, callback);
-  });
-
-  onUnmounted(() => {
-    eventBus.unsubscribe(eventName, callback);
-  });
-};
-
-export const useEventPublisher = (eventName: string) => {
-  const eventBus = useEventBus();
-
-  const publish = (data?: any) => {
-    eventBus.publish(eventName, data);
-  };
-
-  return { publish };
-};
 ```
