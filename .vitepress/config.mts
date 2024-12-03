@@ -108,6 +108,13 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
           ]
         },
         {
+          text: 'Engineering',
+          base: '/md/WebFrontEnd/Engineering/',
+          items: [
+            { text: 'PackageManager', link: 'PackageManager.md' },
+          ]
+        },
+        {
           text: 'Framework',
           base: '/md/WebFrontEnd/Framework/React/',
           items: [
