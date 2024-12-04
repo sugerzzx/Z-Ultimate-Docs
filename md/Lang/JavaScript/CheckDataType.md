@@ -29,7 +29,7 @@ typeof []; // object
 
 ```javascript
 [] instanceof Array; // true
-{} instanceof Object; // true
+(() => {}) instanceof Function; // true
 
 1 instanceof Number; // false
 ```
