@@ -2,7 +2,7 @@
 
 ## Object
 
-👉 [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+[MDN:Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## Class
 
@@ -25,6 +25,8 @@
 公共字段使得实例可以获得属性
 
 ### 方法
+
+方法是一种作为对象的属性的函数。
 
 方法被定义在类实例的原型上并且被所有实例共享
 
@@ -83,3 +85,23 @@ Object.getPrototypeOf(a) === Object.prototype; // true
 ```
 
 几乎所有的 JavaScript 对象最终都继承自 `Object.prototype` 。
+
+## this 关键字
+
+[MDN:this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
+
+`this` 的值取决于它出现的上下文：函数、类或全局。
+
+## new 运算符
+
+[MDN:new](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new)
+
+当一个函数被 `new` 关键字调用时，这个函数会被用作构造函数，`new` **会做以下几件事**：
+
+1. 创建一个空白的纯 JavaScript 对象。接下来我们称其为 `newInstance`
+
+2. 如果构造函数的 `prototype` 是一个对象，则将 `newInstance` 的 `[[Prototype]]` 指向构造函数的 `prototype` 属性，否则 `newInstance` 将保持为一个纯 JavaScript 对象，而其 ` [[Prototype]]` 为 `Object.prototype`
+
+3. 使用指定的参数执行构造函数，并将 `newInstance` 作为 `this` 的上下文（即：构造函数中的所有 `this` 引用都指向 `newInstance`）。
+
+4. 如果构造函数返回一个非原始值，则该返回值作为整个 `new` 表达式的结果。否则（即未返回任何值或返回了一个原始值），`newInstance` 作为整个 `new` 表达式的结果返回。
