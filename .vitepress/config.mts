@@ -75,6 +75,7 @@ function sidebarLang(): DefaultTheme.SidebarItem[] {
           base: '/md/Lang/JavaScript/',
           items: [
             { text: 'AboutJS', link: 'AboutJS.md' },
+            { text: 'ArrowFunction', link: 'ArrowFunction.md' },
             { text: 'CheckDataType', link: 'CheckDataType.md' },
             { text: 'Currying&PartialApplication', link: 'Currying&PartialApplication.md' },
             { text: 'EventLoop', link: 'EventLoop.md' },
