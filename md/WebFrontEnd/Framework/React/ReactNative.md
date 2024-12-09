@@ -190,6 +190,6 @@ yarn add react-native-vector-icons @types/react-native-vector-icons -S
 
 [How to import SVG files in React Native](https://blog.logrocket.com/use-svgs-react-native-tutorial/)
 
-[text](https://stackoverflow.com/questions/49951885/which-is-the-best-approach-to-insert-an-vector-svg-graph-into-a-react-native-a/49952050#49952050)
+[Which is the best approach to insert an vector (svg) graph into a react native application](https://stackoverflow.com/questions/49951885/which-is-the-best-approach-to-insert-an-vector-svg-graph-into-a-react-native-a/49952050#49952050)
 
-[text](https://stackoverflow.com/questions/38830568/how-to-show-svg-file-on-react-native)
+[How to show SVG file on React Native?](https://stackoverflow.com/questions/38830568/how-to-show-svg-file-on-react-native)
