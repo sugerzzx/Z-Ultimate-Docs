@@ -10,7 +10,7 @@
 
 [类是用于**创建对象的模板**，JS 中的类**建立在原型之上**，类实际上是“特殊的函数”](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes)
 
-[使用类：类可以看作是已有的原型继承机制的一种抽象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_classes#%E5%85%AC%E5%85%B1%E5%AD%97%E6%AE%B5)
+[使用类：类可以看作是已有的原型继承机制的一种抽象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_classes)
 
 ### 类的定义
 
