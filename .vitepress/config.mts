@@ -78,6 +78,7 @@ function sidebarLang(): DefaultTheme.SidebarItem[] {
             { text: 'ArrowFunction', link: 'ArrowFunction.md' },
             { text: 'CheckDataType', link: 'CheckDataType.md' },
             { text: 'Currying&PartialApplication', link: 'Currying&PartialApplication.md' },
+            { text: 'DeepClone', link: 'DeepClone.md' },
             { text: 'EventLoop', link: 'EventLoop.md' },
             { text: 'FPVSOOP', link: 'FPVSOOP.md' },
             { text: 'Object&Class', link: 'Object&Class.md' },
