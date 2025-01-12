@@ -1,21 +1,16 @@
 # js 事件循环
 
+事件循环是 JavaScript 中的一种运行时机制，它协调调用栈和任务队列之间的交互，确保代码能够以非阻塞的方式执行。
+
+Javascript 是一门同步的单线程语言，即其在某一时刻只能执行一件事情，无论前一个过程需要多长时间完成，后一个过程都必须等待，这会导致程序或页面的阻塞。为了避免阻塞，Javascript 通过将操作转移给运行时环境来实现异步操作，例如浏览器环境中的 Web API 和 Node.js 环境中的 C++ API。当这些异步操作被完成时，相应的回调函数会被入队至任务队列，事件循环会不断检查调用栈是否为空，如果为空，它将从任务队列中出队第一个可运行的任务，放入调用栈中执行。
+
+[The Difference in Event Loop between JavaScript and Node.js](https://wearecommunity.io/communities/aep-js-community/articles/2893?utm_source=article_from_collection&utm_medium=wearecommunity&utm_campaign=open_article_from_collection)
+
+[A Complete Visual Guide to Understanding the Node.js Event Loop](https://www.builder.io/blog/visual-guide-to-nodejs-event-loop)
+
 ## Event loops in the HTML standard
 
-[To coordinate events, user interaction, scripts, rendering, networking, and so forth, user agents must use event loops as described in this section. Each agent has an associated event loop, which is unique to that agent.](https://html.spec.whatwg.org/multipage/webappapis.html#definitions-3)
-
-> [!INFO] TRANS
-> 为了协调事件、用户交互、脚本、渲染、网络等，用户代理必须使用本节所述的事件循环。每个代理都有一个关联的事件循环，该循环对于该代理是唯一的。
-
-HTML 标准中关于事件循环的定义强调了用户代理（User Agent）必须使用事件循环来协调各种任务的执行，包括事件处理、用户交互、脚本执行、页面渲染、网络请求等等。具体来说，这段定义表明了以下几点：
-
-1. **任务协调**：用户代理必须使用事件循环来协调各种任务的执行，以确保页面的各种行为按照预期进行。这些任务包括处理事件、响应用户交互、执行 JavaScript 脚本、渲染页面、处理网络请求等等。
-
-2. **事件循环的必要性**：为了管理和调度这些任务，用户代理必须依赖事件循环机制。事件循环能够有效地处理异步任务，并且确保它们按照正确的顺序和时机执行。
-
-3. **每个用户代理拥有独立的事件循环**：每个用户代理都有自己的事件循环，这个事件循环是唯一的，并且与其他用户代理的事件循环是独立的。这意味着每个用户代理都可以根据自身的需求和实现细节来管理任务的执行，而不会受到其他代理的影响。
-
-HTML 标准中的事件循环定义强调了事件循环在 Web 浏览器中的重要性，以及用户代理必须使用事件循环来协调各种任务的执行，以确保页面的各种行为按照预期进行。
+_[To coordinate events, user interaction, scripts, rendering, networking, and so forth, user agents must use event loops as described in this section. Each agent has an associated event loop, which is unique to that agent.](https://html.spec.whatwg.org/multipage/webappapis.html#definitions-3)_
 
 ### task queues | 任务队列
 
@@ -48,7 +43,7 @@ _Tasks encapsulate algorithms that are responsible for such work as:_
 5. **对 DOM 操作的响应（Reacting to DOM manipulation）**：
    - 一些元素具有在对 DOM 进行操作时触发的任务，例如将元素插入文档时。这些任务通常用于处理与 DOM 操作相关的工作，例如更新页面布局或触发其他事件。
 
-综上所述，任务是浏览器中执行各种工作的算法的封装。它们负责处理事件分发、解析 HTML、调用回调函数、使用资源以及对 DOM 操作的响应等各种任务。
+任务是浏览器中执行各种工作的算法的封装。它们负责处理事件分发、解析 HTML、调用回调函数、使用资源以及对 DOM 操作的响应等各种任务。
 
 _Formally, a task is a struct which has:_
 
@@ -70,7 +65,7 @@ _Formally, a task is a struct which has:_
 3. **示例**：
    - 用户代理可以为鼠标和键盘事件分配一个任务队列，为其他任务源分配另一个任务队列。然后，用户代理可以根据事件循环处理模型的规定，在绝大多数时间内优先处理键盘和鼠标事件，以保持界面响应性，但不会让其他任务队列被饿死。这样的设置保证了用户代理永远不会以任何一种任务源的事件顺序处理事件。
 
-综上所述，任务源和任务队列的概念有助于用户代理将不同类型的任务进行分组和处理，并且在事件循环中协调它们的执行，从而保证了整个系统的稳定性和性能。
+任务源和任务队列的概念有助于用户代理将不同类型的任务进行分组和处理，并且在事件循环中协调它们的执行，从而保证了整个系统的稳定性和性能。
 
 ### microtask queue | 微任务队列
 
@@ -79,33 +74,19 @@ _The microtask queue is not a task queue._
 尽管微任务队列也包含一组待执行的任务，但它不是任务队列的一种形式。
 微任务队列是一种特殊的队列，它在每个事件循环迭代的末尾被执行。微任务队列中的任务具有比任务队列中的任务更高的优先级，并且在执行完当前事件循环迭代中的所有宏任务后立即执行
 
+### processing model
+
+[Processing model](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model)
+
 ## The Node.js Event Loop
 
-[The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#what-is-the-event-loop)
-
-这句话解释了 Node.js 中事件循环（event loop）的作用以及 JavaScript 单线程特性下如何实现非阻塞 I/O 操作的原理。逐步解释：
-
-1. **事件循环（event loop）**：事件循环是 Node.js 的核心机制之一，用于处理异步操作和事件驱动的编程范式。它负责接收和分发事件，并且在事件发生时执行相应的回调函数。
-
-2. **JavaScript 的单线程特性**：JavaScript 是一种单线程语言，意味着它只有一个主线程来执行代码。在传统的同步编程模型中，当主线程执行 I/O 操作时会发生阻塞，直到操作完成才能继续执行后续代码。
-
-3. **非阻塞 I/O 操作**：为了避免主线程的阻塞，Node.js 采用了非阻塞 I/O 操作。这意味着当主线程发起一个 I/O 操作（如文件读取、网络请求等）时，它不会等待操作完成，而是立即继续执行后续代码。
-
-4. **操作系统内核的利用**：Node.js 通过将 I/O 操作委托给操作系统内核来实现非阻塞 I/O。操作系统内核负责管理系统资源，并且通常会提供一些**异步操作的 API**，允许程序发起 I/O 请求而无需等待操作完成。这样，当 Node.js 发起一个非阻塞 I/O 操作时，操作系统内核会在后台处理这个操作，同时允许 Node.js 主线程继续执行其他代码。
-
-**综上所述**，事件循环是 Node.js 实现非阻塞 I/O 操作的关键机制之一。它允许 Node.js 主线程在执行 I/O 操作时不被阻塞，通过将操作委托给操作系统内核并利用操作系统提供的异步 API 来实现。这使得 Node.js 能够高效地处理大量并发的 I/O 操作，从而提高了应用程序的性能和吞吐量。
-
-上述特性同样适用于浏览器中的 JavaScript。虽然浏览器和 Node.js 是不同的环境，但它们都采用了类似的事件驱动和异步编程模型，以处理 I/O 操作和其他异步任务。
-
-在浏览器中，JavaScript 同样是单线程的，主要负责处理用户界面和执行 JavaScript 代码。然而，浏览器环境与 Node.js 不同，它还必须处理用户交互、渲染页面和网络请求等任务。
-
-**因此**，浏览器中的 JavaScript 同样利用事件循环和非阻塞 I/O 操作来处理异步任务。例如，浏览器中的 Ajax 请求、DOM 事件处理、定时器等都是异步的，它们不会阻塞主线程的执行，而是通过事件循环和回调函数来处理。
+_[The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#what-is-the-event-loop)_
 
 ### Event Loop 工作原理
 
 逐步理解 Node.js 启动过程及其事件循环如何工作：
 
-1. **初始化:** 当您启动 Node.js 应用程序时，它首先会初始化一些内部变量和设置，例如全局对象和模块系统。
+1. **初始化:** 当启动 Node.js 应用程序时，它首先会初始化一些内部变量和设置，例如全局对象和模块系统。
 
 2. **处理输入脚本:** 接下来，Node.js 会处理您提供的脚本文件。该脚本可能会包含同步和异步代码。
 
@@ -175,22 +156,6 @@ _The microtask queue is not a task queue._
 6. **close callbacks（关闭回调）**：
    - 一些关闭事件的回调函数在这个阶段被执行，例如 `socket.on('close', ...)`。
 
-#### 阶段详述
-
-##### timers（定时器）
-
-##### pending callbacks（挂起回调）
-
-##### idle、prepare
-
-##### poll（轮询）
-
-##### check（检查）
-
-##### close callbacks（关闭回调）
-
-##### setImmediate 和 setTimeout
-
 #### process.nextTick
 
 1. **`process.nextTick()` 不是事件循环的一部分**：
@@ -203,5 +168,3 @@ _The microtask queue is not a task queue._
 
 3. **`process.nextTick()` 的影响**：
    - 在给定的事件循环阶段中调用 `process.nextTick()` 时，所有传递给 `process.nextTick()` 的回调都会在事件循环继续之前解析。这可能会导致一些问题，因为它允许您通过递归调用 `process.nextTick()` 来“饿死”您的 I/O，这会阻止事件循环进入轮询阶段。
-
-这段话的重点在于强调 `process.nextTick()` 的特殊性，以及它对事件循环执行流程的影响。通过理解这些概念，可以更好地优化和管理异步代码，避免可能导致性能问题的陷阱。
