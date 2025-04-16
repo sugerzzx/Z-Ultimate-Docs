@@ -113,6 +113,7 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
           text: 'Engineering',
           base: '/md/WebFrontEnd/Engineering/',
           items: [
+            { text: 'GitLabCICD', link: 'GitLabCICD.md' },
             { text: 'PackageManager', link: 'PackageManager.md' },
           ]
         },
