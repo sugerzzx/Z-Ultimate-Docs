@@ -122,6 +122,12 @@ function sidebarWebFrontEnd(): DefaultTheme.SidebarItem[] {
           base: '/md/WebFrontEnd/Framework/React/',
           items: [
             { text: 'ReactNative', link: 'ReactNative.md' },
+            {
+              text: 'Electron', base: '/md/WebFrontEnd/Framework/Electron/', items: [
+                { text: 'Build', link: 'Build.md' },
+                { text: 'Ecosystem', link: 'Ecosystem.md' },
+              ]
+            },
           ]
         },
         { text: 'Patch', link: 'Patch.md' },
